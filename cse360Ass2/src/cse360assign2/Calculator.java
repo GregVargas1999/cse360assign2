@@ -30,12 +30,14 @@ public class Calculator
 	 * This method inserts a number into this array in ascending order and 
 	 * without any duplicate numbers
 	 * 
-	 * @param insertNum number to insert into array at the necessary index.
+	 * @param 	insertNum number to insert into array at the necessary index.
 	 * 					If the number is a duplicate, it will not be 
 	 * 					inserted into the array
+	 * @return  the calculator's total that will be displayed and used in 
+	 * 			further calculations
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/**
@@ -46,7 +48,7 @@ public class Calculator
 	 */
 	public void add (int value) 
 	{
-		
+		total = total + value;
 	}
 	
 	/**
@@ -57,7 +59,7 @@ public class Calculator
 	 */
 	public void subtract (int value)
 	{
-		
+		total = total - value;
 	}
 	
 	/**
@@ -68,7 +70,7 @@ public class Calculator
 	 */
 	public void multiply (int value)
 	{
-		
+		total = total * value;
 	}
 	
 	/**
@@ -79,12 +81,17 @@ public class Calculator
 	 */
 	public void divide (int value) 
 	{
-		
+		if (value == 0)
+			total = 0;
+		else
+			total = total / value;
 	}
 	
 	/**
 	 * This method returns a history of the calculator's 
 	 * functions in order as a string
+	 * 
+	 * @return		the calculator's history
 	 */
 	public String getHistory () 
 	{
