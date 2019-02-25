@@ -17,6 +17,7 @@ public class Calculator
 {
 
 	private int total; //keeps track of calculator total
+	private String history = "0"; //keeps track of calculator history
 	
 	/**
 	 * Class constructor.
@@ -49,6 +50,7 @@ public class Calculator
 	public void add (int value) 
 	{
 		total = total + value;
+		history = history + " + " + value;
 	}
 	
 	/**
@@ -60,6 +62,7 @@ public class Calculator
 	public void subtract (int value)
 	{
 		total = total - value;
+		history = history + " - " + value;
 	}
 	
 	/**
@@ -71,6 +74,7 @@ public class Calculator
 	public void multiply (int value)
 	{
 		total = total * value;
+		history = history + " * " + value;
 	}
 	
 	/**
@@ -81,20 +85,23 @@ public class Calculator
 	 */
 	public void divide (int value) 
 	{
+		//Check if value is 0
 		if (value == 0)
 			total = 0;
 		else
 			total = total / value;
+		
+		history = history + " / " + value;
 	}
 	
 	/**
 	 * This method returns a history of the calculator's 
 	 * functions in order as a string
 	 * 
-	 * @return		the calculator's history
+	 * @return		the calculator's history according to history variable
 	 */
 	public String getHistory () 
 	{
-		return "";
+		return history;
 	}
 }
